@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <h1>Just Us 💙</h1>
+      <p>A space meant only for us</p>
+
+      <input id="username" placeholder="Username" />
+      <input id="password" type="password" placeholder="Password" />
+
+      <button type="button" onclick="login()">Enter</button>
+      <p id="error"></p>
+    </div>
+
+    <script>
+      function login() {
+        const u = document.getElementById("username").value.trim();
+        const p = document.getElementById("password").value.trim();
+
+        if (u === "us" && p === "forever") {
+          // 🔊 START MUSIC IN SHELL (THIS IS THE FIX)
+          parent.postMessage("start-music", "*");
+
+          parent.document.getElementById("frame").src = "home.html";
+        } else {
+          document.getElementById("error").innerText =
+            "Wrong username or password 💔";
+        }
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Letter</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="page letter">
+      <h1>For You</h1>
+
+      <div class="letter-box">
+        <p class="line">Some memories don’t fade.</p>
+        <p class="line">Some people never leave.</p>
+        <p class="line">Even when paths change,</p>
+        <p class="line">what we felt was real.</p>
+      </div>
+    </div>
+
+    <script>
+      const lines = document.querySelectorAll(".line");
+      lines.forEach((line, index) => {
+        line.style.animationDelay = `${index * 1.6}s`;
+      });
+    </script>
+  </body>
+</html>

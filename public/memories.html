@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Memories</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body>
+    <div class="page">
+      <h1>Memories We Made</h1>
+
+      <video src="videos/vid2.mp4" autoplay muted loop></video>
+      <video src="videos/vid3.mp4" autoplay muted loop></video>
+      <video src="videos/vid4.mp4" autoplay muted loop></video>
+      <video src="videos/vid5.mp4" autoplay muted loop></video>
+
+      <button type="button" onclick="go()">Final →</button>
+    </div>
+
+    <script>
+      function go() {
+        parent.document.getElementById("frame").src = "letter.html";
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Just Us 💙</title>
+
+    <style>
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+        background: black;
+      }
+
+      iframe {
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+    </style>
+  </head>
+
+  <body>
+    <audio id="music" preload="auto" loop>
+      <source src="music/oursong.mp3" type="audio/mpeg" />
+    </audio>
+
+    <iframe id="frame" src="login.html"></iframe>
+
+    <script>
+      let started = false;
+      const music = document.getElementById("music");
+
+      document.addEventListener("click", () => {
+        if (!started) {
+          music.volume = 0.8;
+          music.play().catch(() => {});
+          started = true;
+        }
+      });
+    </script>
+    <script>
+      window.addEventListener("message", (event) => {
+        if (event.data === "start-music") {
+          const music = document.getElementById("music");
+          if (music.paused) {
+            music.volume = 0.8;
+            music.play().catch(() => {});
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

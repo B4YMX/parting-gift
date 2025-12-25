@@ -1,0 +1,843 @@
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Poppins, sans-serif;
+  color: white;
+  background: linear-gradient(-45deg, #e8f4ff, #f1e9ff, #e6f7f4, #fbe9f2);
+  background-size: 400% 400%;
+  animation: bg 25s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes bg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.page {
+  text-align: center;
+  padding: 60px;
+}
+
+.subtitle {
+  opacity: 0.85;
+  margin-bottom: 40px;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 260px;
+  margin: auto;
+}
+
+.login-box input,
+button {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+}
+
+.card-row {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 30px;
+  border-radius: 20px;
+  width: 180px;
+}
+
+.romantic-text {
+  max-width: 500px;
+  margin: 30px auto;
+  opacity: 0.85;
+}
+
+.nav-btn {
+  padding: 12px 26px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.video-box {
+  position: relative;
+}
+
+video {
+  width: 320px;
+  border-radius: 20px;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  opacity: 0.85;
+}
+
+.letter {
+  justify-content: center;
+}
+
+.letter-box {
+  max-width: 600px;
+  margin: auto;
+}
+
+.line {
+  opacity: 0;
+  animation: fade 1.5s forwards;
+}
+
+.line:nth-child(1) {
+  animation-delay: 1s;
+}
+.line:nth-child(2) {
+  animation-delay: 3s;
+}
+.line:nth-child(3) {
+  animation-delay: 5s;
+}
+
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
+}
+
+.name-glow {
+  margin-top: 60px;
+  font-size: 2.8rem;
+  text-shadow: 0 0 30px #9fd7ff;
+}
+/* ===============================
+   BASE STYLES (UNCHANGED)
+================================ */
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  color: #243447; /* DARKER TEXT */
+  background: linear-gradient(-45deg, #e8f4ff, #f1e9ff, #e6f7f4, #fbe9f2);
+  background-size: 400% 400%;
+  animation: bg 25s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+/* Background animation stays same */
+@keyframes bg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* ===============================
+   INFINITE FLOATING BUBBLES — VERY DENSE
+   (LIGHT + DARK PASTELS)
+================================ */
+
+body::before,
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Layer 1 — BIG + MEDIUM bubbles (slow, darker tones) */
+body::before {
+  background-image: radial-gradient(
+      circle at 5% 15%,
+      rgba(90, 160, 220, 0.45) 7px,
+      transparent 8px
+    ),
+    radial-gradient(
+      circle at 10% 85%,
+      rgba(120, 180, 240, 0.4) 6px,
+      transparent 7px
+    ),
+    radial-gradient(
+      circle at 20% 40%,
+      rgba(80, 140, 200, 0.45) 8px,
+      transparent 9px
+    ),
+    radial-gradient(
+      circle at 30% 70%,
+      rgba(150, 190, 255, 0.4) 7px,
+      transparent 8px
+    ),
+    radial-gradient(
+      circle at 40% 10%,
+      rgba(110, 160, 230, 0.45) 6px,
+      transparent 7px
+    ),
+    radial-gradient(
+      circle at 50% 90%,
+      rgba(170, 210, 255, 0.4) 8px,
+      transparent 9px
+    ),
+    radial-gradient(
+      circle at 60% 30%,
+      rgba(90, 140, 200, 0.45) 7px,
+      transparent 8px
+    ),
+    radial-gradient(
+      circle at 70% 60%,
+      rgba(130, 170, 230, 0.4) 6px,
+      transparent 7px
+    ),
+    radial-gradient(
+      circle at 80% 20%,
+      rgba(100, 150, 210, 0.45) 8px,
+      transparent 9px
+    ),
+    radial-gradient(
+      circle at 90% 50%,
+      rgba(160, 200, 255, 0.4) 7px,
+      transparent 8px
+    ),
+    radial-gradient(
+      circle at 95% 80%,
+      rgba(85, 130, 190, 0.45) 6px,
+      transparent 7px
+    ),
+    radial-gradient(
+      circle at 15% 55%,
+      rgba(140, 180, 245, 0.4) 7px,
+      transparent 8px
+    );
+  background-size: 100% 100%;
+  animation: floatUpSlow 48s linear infinite;
+  filter: blur(0.4px);
+}
+
+/* Layer 2 — SMALL + MANY bubbles (faster, mixed tones) */
+body::after {
+  background-image: radial-gradient(
+      circle at 3% 60%,
+      rgba(60, 120, 180, 0.45) 3px,
+      transparent 4px
+    ),
+    radial-gradient(
+      circle at 7% 20%,
+      rgba(140, 190, 255, 0.35) 2.5px,
+      transparent 3.5px
+    ),
+    radial-gradient(
+      circle at 12% 85%,
+      rgba(90, 150, 220, 0.4) 3px,
+      transparent 4px
+    ),
+    radial-gradient(
+      circle at 18% 40%,
+      rgba(170, 210, 255, 0.35) 2.5px,
+      transparent 3.5px
+    ),
+    radial-gradient(
+      circle at 24% 10%,
+      rgba(80, 130, 190, 0.45) 3px,
+      transparent 4px
+    ),
+    radial-gradient(
+      circle at 30% 75%,
+      rgba(150, 190, 240, 0.35) 2.5px,
+      transparent 3.5px
+    ),
+    radial-gradient(
+      circle at 36% 55%,
+      rgba(70, 120, 180, 0.45) 3px,
+      transparent 4px
+    ),
+    radial-gradient(
+      circle at 42% 25%,
+      rgba(160, 205, 255, 0.35) 2.5px,
+      transparent 3.5px
+    ),
+    radial-gradient(
+      circle at 48% 90%,
+      rgba(90, 145, 205, 0.4) 3px,
+      transparent 4px
+    ),
+    radial-gradient(
+      circle at 54% 45%,
+      rgba(140, 180, 240, 0.35) 2.5px,
+      transparent 3.5px
+    ),
+    radial-gradient(
+      circle at 60% 15%,
+      rgba(60, 110, 170, 0.45) 3px,
+      transparent 4px
+    ),
+    radial-gradient(
+      circle at 66% 80%,
+      rgba(170, 210, 255, 0.35) 2.5px,
+      transparent 3.5px
+    ),
+    radial-gradient(
+      circle at 72% 35%,
+      rgba(80, 135, 195, 0.4) 3px,
+      transparent 4px
+    ),
+    radial-gradient(
+      circle at 78% 65%,
+      rgba(150, 190, 240, 0.35) 2.5px,
+      transparent 3.5px
+    ),
+    radial-gradient(
+      circle at 84% 5%,
+      rgba(70, 120, 180, 0.45) 3px,
+      transparent 4px
+    ),
+    radial-gradient(
+      circle at 90% 50%,
+      rgba(160, 200, 255, 0.35) 2.5px,
+      transparent 3.5px
+    ),
+    radial-gradient(
+      circle at 96% 25%,
+      rgba(90, 140, 200, 0.4) 3px,
+      transparent 4px
+    );
+  background-size: 100% 100%;
+  animation: floatUpFast 28s linear infinite;
+  filter: blur(0.3px);
+}
+
+@keyframes floatUpSlow {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-160vh);
+  }
+}
+
+@keyframes floatUpFast {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(-200vh);
+  }
+}
+
+/* ===============================
+   PAGE CONTENT
+================================ */
+
+.page {
+  text-align: center;
+  padding: 60px;
+  position: relative;
+  z-index: 2;
+}
+
+h1 {
+  color: #1b2b3a;
+}
+
+.subtitle {
+  opacity: 0.9;
+  margin-bottom: 40px;
+  color: #34495e;
+}
+
+/* ===============================
+   LOGIN
+================================ */
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 260px;
+  margin: auto;
+}
+
+.login-box input {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.login-box button {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  cursor: pointer;
+  background: #cfe9ff;
+  color: #1b2b3a;
+}
+
+/* ===============================
+   HOME / CARDS
+================================ */
+
+.card-row {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.35);
+  padding: 30px;
+  border-radius: 20px;
+  width: 180px;
+  color: #243447;
+}
+
+/* ===============================
+   ROMANTIC TEXT
+================================ */
+
+.romantic-text {
+  max-width: 520px;
+  margin: 30px auto;
+  opacity: 0.95;
+  color: #2c3e50;
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+
+.nav-btn {
+  padding: 12px 28px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+  background: #cfe9ff;
+  color: #1b2b3a;
+}
+
+/* ===============================
+   VIDEOS
+================================ */
+
+.video-box {
+  position: relative;
+  display: inline-block;
+}
+
+video {
+  width: 320px;
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 14px;
+  width: 100%;
+  text-align: center;
+  font-size: 0.95rem;
+  color: #1f2f3f;
+  opacity: 0.9;
+}
+
+/* ===============================
+   LETTER PAGE
+================================ */
+
+.letter-box {
+  max-width: 600px;
+  margin: auto;
+}
+
+.line {
+  opacity: 0;
+  animation: fade 1.6s forwards;
+  color: #243447;
+}
+
+.line:nth-child(1) {
+  animation-delay: 1s;
+}
+.line:nth-child(2) {
+  animation-delay: 3s;
+}
+.line:nth-child(3) {
+  animation-delay: 5s;
+}
+
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
+}
+
+.name-glow {
+  margin-top: 60px;
+  font-size: 2.8rem;
+  color: #1b2b3a;
+  text-shadow: 0 0 30px #9fd7ff;
+}
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(120deg, #eaf4ff, #f4ecff);
+  color: #1f2d3d;
+  overflow-x: hidden;
+}
+
+.center-title {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.center-sub {
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.login {
+  text-align: center;
+  margin-top: 100px;
+}
+
+.login-box input {
+  display: block;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.login-box button {
+  padding: 10px 20px;
+}
+
+.error {
+  color: red;
+}
+
+.video-section {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+}
+
+.video-card {
+  width: 220px;
+  text-align: center;
+}
+
+.video-card video {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.video-card:hover video {
+  box-shadow: 0 0 30px rgba(80, 150, 255, 0.8);
+}
+
+.memories-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  padding: 40px;
+}
+
+.memory-card {
+  position: relative;
+}
+
+.memory-card video {
+  width: 100%;
+  border-radius: 20px;
+}
+
+.memory-card span {
+  position: absolute;
+  bottom: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.5);
+  color: #fff;
+  padding: 6px 12px;
+  border-radius: 15px;
+}
+
+.nav-btn {
+  display: block;
+  margin: 40px auto;
+  padding: 12px 25px;
+}
+
+.letter {
+  text-align: center;
+  margin-top: 150px;
+  font-size: 1.3rem;
+}
+
+.name {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 3rem;
+  color: #3b6cff;
+}
+
+/* BUBBLES */
+.bubbles span {
+  position: fixed;
+  bottom: -50px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  animation: rise 20s linear infinite;
+}
+
+@keyframes rise {
+  to {
+    transform: translateY(-120vh);
+    opacity: 0;
+  }
+}
+body {
+  margin: 0;
+  min-height: 100vh;
+  font-family: Poppins, sans-serif;
+  color: white;
+  background: linear-gradient(-45deg, #e8f4ff, #f1e9ff, #e6f7f4, #fbe9f2);
+  background-size: 400% 400%;
+  animation: bg 25s ease infinite;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@keyframes bg {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.page {
+  text-align: center;
+  padding: 60px;
+}
+
+.subtitle {
+  opacity: 0.85;
+  margin-bottom: 40px;
+}
+
+.login-box {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  width: 260px;
+  margin: auto;
+}
+
+.login-box input,
+button {
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+}
+
+.card-row {
+  display: flex;
+  gap: 30px;
+  justify-content: center;
+  margin: 50px 0;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.25);
+  padding: 30px;
+  border-radius: 20px;
+  width: 180px;
+}
+
+.romantic-text {
+  max-width: 500px;
+  margin: 30px auto;
+  opacity: 0.85;
+}
+
+.nav-btn {
+  padding: 12px 26px;
+  border-radius: 30px;
+  border: none;
+  cursor: pointer;
+}
+
+.video-box {
+  position: relative;
+}
+
+video {
+  width: 320px;
+  border-radius: 20px;
+}
+
+.overlay-text {
+  position: absolute;
+  bottom: 15px;
+  width: 100%;
+  text-align: center;
+  opacity: 0.85;
+}
+
+.letter {
+  justify-content: center;
+}
+
+.letter-box {
+  max-width: 600px;
+  margin: auto;
+}
+
+.line {
+  opacity: 0;
+  animation: fade 1.5s forwards;
+}
+
+.line:nth-child(1) {
+  animation-delay: 1s;
+}
+.line:nth-child(2) {
+  animation-delay: 3s;
+}
+.line:nth-child(3) {
+  animation-delay: 5s;
+}
+
+@keyframes fade {
+  to {
+    opacity: 1;
+  }
+}
+
+.name-glow {
+  margin-top: 60px;
+  font-size: 2.8rem;
+  text-shadow: 0 0 30px #9fd7ff;
+}
+/* ===============================
+   VIDEO HOVER GLOW
+================================ */
+
+.video-card video,
+.memory-card video {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.video-card:hover video,
+.memory-card:hover video {
+  transform: scale(1.03);
+  box-shadow: 0 0 35px rgba(80, 150, 255, 0.8);
+}
+
+/* ===============================
+   DARKER TEXT VISIBILITY
+================================ */
+
+p,
+span,
+h1,
+h2,
+h3 {
+  color: #1f2f3f;
+}
+body {
+  margin: 0;
+  font-family: "Segoe UI", sans-serif;
+  background: linear-gradient(120deg, #bfe9ff, #e6f7ff);
+  color: #0a2540;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  text-align: center;
+}
+
+input {
+  padding: 10px;
+  width: 200px;
+  border-radius: 8px;
+  border: none;
+}
+
+button {
+  padding: 10px 18px;
+  border-radius: 10px;
+  border: none;
+  background: #4bb6ff;
+  color: white;
+  cursor: pointer;
+}
+
+video {
+  width: 280px;
+  border-radius: 14px;
+}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Letter</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+
+<body>
+  <div class="page letter">
+    <h1>For You</h1>
+
+    <div class="letter-box">
+      <p class="line">Some memories don’t fade.</p>
+      <p class="line">Some people never leave.</p>
+      <p class="line">Even when paths change,</p>
+      <p class="line">what we felt was real.</p>
+    </div>
+  </div>
+
+  <script>
+    const lines = document.querySelectorAll(".line");
+    lines.forEach((line, index) => {
+      line.style.animationDelay = `${index * 1.6}s`;
+    });
+  </script>
+</body>
+</html>
