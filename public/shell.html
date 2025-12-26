@@ -30,25 +30,25 @@
     <iframe id="frame" src="login.html"></iframe>
 
     <script>
-      let started = false;
       const music = document.getElementById("music");
+      let started = false;
 
-      document.addEventListener("click", () => {
+      function startMusic() {
         if (!started) {
-          music.volume = 0.8;
+          music.volume = 1; // 🔊 FULL AUDIBLE VOLUME
+          music.muted = false;
           music.play().catch(() => {});
           started = true;
         }
-      });
-    </script>
-    <script>
+      }
+
+      // First user interaction
+      document.addEventListener("click", startMusic);
+
+      // Message from login page
       window.addEventListener("message", (event) => {
         if (event.data === "start-music") {
-          const music = document.getElementById("music");
-          if (music.paused) {
-            music.volume = 0.8;
-            music.play().catch(() => {});
-          }
+          startMusic();
         }
       });
     </script>

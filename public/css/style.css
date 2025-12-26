@@ -814,30 +814,98 @@ video {
   width: 280px;
   border-radius: 14px;
 }
-<!DOCTYPE html>
-<html>
-<head>
-  <title>Letter</title>
-  <link rel="stylesheet" href="css/style.css" />
-</head>
+/* ===============================
+   SUBTLE PAGE CONTAINER BORDER
+   (NON-DESTRUCTIVE)
+================================ */
 
-<body>
-  <div class="page letter">
-    <h1>For You</h1>
+.page {
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: 28px;
+  background: rgba(255, 255, 255, 0.18);
+  backdrop-filter: blur(6px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+}
 
-    <div class="letter-box">
-      <p class="line">Some memories don’t fade.</p>
-      <p class="line">Some people never leave.</p>
-      <p class="line">Even when paths change,</p>
-      <p class="line">what we felt was real.</p>
-    </div>
-  </div>
+/* Gentle inner separation */
+.page > * {
+  position: relative;
+  z-index: 2;
+}
+/* ===============================
+   LETTER MESSAGE BOX STYLE
+================================ */
 
-  <script>
-    const lines = document.querySelectorAll(".line");
-    lines.forEach((line, index) => {
-      line.style.animationDelay = `${index * 1.6}s`;
-    });
-  </script>
-</body>
-</html>
+.letter-box {
+  background: rgba(255, 255, 255, 0.85);
+  padding: 30px 28px;
+  border-radius: 22px;
+  text-align: left;
+  line-height: 1.7;
+  box-shadow: inset 0 0 0 1px rgba(180, 200, 255, 0.4);
+}
+
+/* Chat bubble feel */
+.letter-box .line {
+  background: #f1f6ff;
+  padding: 14px 18px;
+  border-radius: 18px;
+  margin: 14px 0;
+  width: fit-content;
+  max-width: 90%;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+}
+
+/* Slight variation for natural flow */
+.letter-box .line:nth-child(even) {
+  margin-left: auto;
+  background: #eaf1ff;
+}
+/* ===============================
+   HOME VIDEO SPACING
+================================ */
+
+.page video {
+  margin-top: 25px;
+}
+
+.page p {
+  margin-bottom: 20px;
+  opacity: 0.85;
+}
+/* Letter line reveal animation */
+.letter-box .line {
+  opacity: 0;
+  transform: translateY(10px);
+  animation: revealLine 0.6s ease forwards;
+}
+
+@keyframes revealLine {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   VIDEO HOVER GLOW
+================================ */
+
+.video-card video,
+.memory-card video {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.video-card:hover video,
+.memory-card:hover video {
+  transform: scale(1.03);
+  box-shadow: 0 0 35px rgba(80, 150, 255, 0.8);
+}
+.page video {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.page video:hover {
+  transform: scale(1.03);
+  box-shadow: 0 0 35px rgba(80, 150, 255, 0.8);
+}

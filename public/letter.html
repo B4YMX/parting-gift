@@ -1,7 +1,10 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
+    <meta charset="UTF-8" />
     <title>Letter</title>
+
+    <!-- Main stylesheet (unchanged) -->
     <link rel="stylesheet" href="css/style.css" />
   </head>
 
@@ -14,13 +17,76 @@
         <p class="line">Some people never leave.</p>
         <p class="line">Even when paths change,</p>
         <p class="line">what we felt was real.</p>
+
+        <p class="line">Hey Geeky!</p>
+
+        <p class="line">
+          I'm sorry it has turned out to be like this 🙁. I'm really incapable
+          of having someone as good as you in my life.
+        </p>
+
+        <p class="line">
+          Whatever I did when we were together was real, and I’d hate for you to
+          think otherwise.
+        </p>
+
+        <p class="line">
+          You are the best girlfriend there is. I know this hurts, and I’m sorry
+          it’s because of me.
+        </p>
+
+        <p class="line">
+          You’ll always be the best person in my life that ever existed. I’ll
+          always be there for you — I promise ❤️
+        </p>
+
+        <p class="line">
+          Please don’t slack like I did. I know you’re strong enough to handle
+          this, and I truly believe you’ll do great.
+        </p>
+
+        <p class="line">
+          This is my first website. I hope you like it — it took weeks of
+          sleepless nights, and it’s only for you.
+        </p>
+
+        <p class="line">
+          Talking to my mom after everything is hard. You don’t have to. I just
+          want you to be okay.
+        </p>
+
+        <p class="line">
+          No matter where life takes us next, I hope you always remember this —
+          you were deeply loved, genuinely appreciated, and never taken for
+          granted.
+        </p>
+
+        <p class="line">
+          Some connections don’t end, they simply change shape. And this one
+          will always mean something to me.
+        </p>
+
+        <p class="line">
+          I hope life gives you everything you deserve — peace, laughter,
+          success, and a love that never makes you doubt yourself.
+        </p>
+
+        <p class="line">
+          Thank you for being a chapter I will always read with a soft smile.
+        </p>
+
+        <p class="line">Take care of yourself. Always. 🤍</p>
       </div>
     </div>
 
+    <!-- Line-by-line animation controller -->
     <script>
-      const lines = document.querySelectorAll(".line");
-      lines.forEach((line, index) => {
-        line.style.animationDelay = `${index * 1.6}s`;
+      document.addEventListener("DOMContentLoaded", () => {
+        const lines = document.querySelectorAll(".letter-box .line");
+
+        lines.forEach((line, index) => {
+          line.style.animationDelay = `${index * 1.6}s`;
+        });
       });
     </script>
   </body>
